@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- TODO put the code into separate module -->
+    <menuitem
+        id="hr_holidays.menu_hr_holidays_dashboard"
+            name="Dashboard"
+            parent="hr_holidays.menu_hr_holidays_root"
+            sequence="1"
+            action="hr_holidays.action_hr_holidays_dashboard"
+            groups="base.group_user"/>
+
+    <!-- TODO END -->
+
+</odoo>
+

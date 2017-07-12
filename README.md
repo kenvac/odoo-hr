@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/kenvac/odoo-hr.svg?branch=master)](https://travis-ci.org/kenvac/odoo-hr)
 [![codecov](https://codecov.io/gh/kenvac/odoo-hr/branch/master/graph/badge.svg)](https://codecov.io/gh/kenvac/odoo-hr)
+[![Coverage Status](https://coveralls.io/repos/github/kenvac/odoo-hr/badge.svg?branch=10.0)](https://coveralls.io/github/kenvac/odoo-hr?branch=10.0)
 
 Human Resources
 ===============
