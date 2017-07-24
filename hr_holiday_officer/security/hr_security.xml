@@ -3,7 +3,7 @@
     <record id="hr_holidays.property_rule_holidays_officer" model="ir.rule">
         <field name="name">Holidays Officer</field>
         <field name="model_id" ref="hr_holidays.model_hr_holidays"/>
-        <field name="domain_force">[('employee_id','child_of',[user.employee_ids[0].id])]</field>
+        <field name="domain_force">[('employee_id','child_of',[user.employee_ids.id])]</field>
         <field name="perm_unlink" eval="False"/>
         <field name="groups" eval="[(3,ref('hr_holidays.group_hr_holidays_manager'))]"/>
     </record>

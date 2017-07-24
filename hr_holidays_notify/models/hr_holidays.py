@@ -16,7 +16,8 @@ class Holidays(models.Model):
         # Do not send email when employee is manager
         for holiday in self.filtered(lambda r:
                                      r.type != 'add' and not
-                                     r.check_manager()):
+                                     r.check_manager() and
+                                     r.holiday_status_id.limit):
             tmpl.send_mail(holiday.id)
         return ret_vals
 
@@ -28,7 +29,8 @@ class Holidays(models.Model):
         # Do not send email when employee is manager
         for holiday in self.filtered(lambda r:
                                      r.type != 'add' and not
-                                     r.check_manager()):
+                                     r.check_manager() and
+                                     r.holiday_status_id.limit):
             tmpl.send_mail(holiday.id)
         return ret_vals
 
@@ -37,7 +39,8 @@ class Holidays(models.Model):
         '''Second level holiday approval'''
         tmpl = self.env.ref("hr_holidays_notify.hr_holidays_confirmation")
         ret_vals = super(Holidays, self).action_validate()
-        for holiday in self.filtered(lambda r: r.type != 'add'):
+        for holiday in self.filtered(lambda r: r.type != 'add' and
+                                     r.holiday_status_id.limit):
             tmpl.send_mail(holiday.id)
         return ret_vals
 
@@ -49,7 +52,8 @@ class Holidays(models.Model):
         # Do not send email when employee is manager
         for holiday in self.filtered(lambda r:
                                      r.type != 'add' and not
-                                     r.check_manager()):
+                                     r.check_manager() and
+                                     r.holiday_status_id.limit):
             tmpl.send_mail(holiday.id)
         return ret_vals
 
